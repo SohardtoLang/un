@@ -27,7 +27,7 @@ app.get('/email', (req, res) => {
   
   
   res.json({
-    email: randomEmail({domain: domain}),
+    nomer: randomEmail({domain: domain}),
     password: pw
   })
 })
