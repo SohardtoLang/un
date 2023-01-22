@@ -3,7 +3,10 @@ const randomEmail = require('random-email');
 const randomstring = require("randomstring")
 var password = require('password');
 const app = express()
+var nodemailer = require("nodemailer");
 var random = require('random-number-generator')
+var axios = require('axios')
+var {GasSpam}=require('./test.js')
 const port = 3000
 
 //get random
@@ -27,7 +30,7 @@ app.get('/email', (req, res) => {
   
   
   res.json({
-    nomer: randomEmail({domain: domain}),
+    email: randomEmail({domain: domain}),
     password: pw
   })
 })
@@ -45,6 +48,19 @@ app.get('/nomor', (req, res) => {
     password: pw
   })
 })
+
+app.get('/gasSpam', (req, res) => {
+  const email = req.query.email
+  
+  if(!email) return res.json({
+    status: false
+  }) 
+  GasSpam(email)
+  res.json({
+    status: true
+  })
+})
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
